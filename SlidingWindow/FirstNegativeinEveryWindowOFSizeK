@@ -1,0 +1,27 @@
+
+def printFirstNegativeInteger( A, N, K):
+    arr=A
+    i=0
+    j=0
+    res=[]
+    temp=[]
+    
+    while j<N:
+        if arr[j]<0:
+            temp.append(arr[j])
+            
+        if j-i+1<K:
+            j+=1
+            
+        elif j-i+1==K:
+            if len(temp)==0:
+                res.append(0)
+            else:
+                res.append(temp[0])
+                if arr[i]<0: # we popping out the first number, it means as we moving with other window we have to remove the -ve element of the previous window 
+                    temp.pop(0)
+            i+=1
+            j+=1
+            #If you pop from temp unconditionally, it would remove -3 (the first negative number in this window) even though it’s still part of the current window. This results in the incorrect first negative being tracked (-4 instead of -3).
+    return res
+    
