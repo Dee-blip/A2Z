@@ -1,0 +1,19 @@
+class Solution:
+    def maximumSumSubarray (self,K,Arr,N):
+        i=0
+        j=0
+        sum1=0
+        res=0
+        n=len(Arr)
+        while j<n:
+            sum1+=Arr[j]
+            
+            if j-i+1<K:
+                j+=1
+            elif j-i+1==K:
+                res=max(res,sum1)
+                sum1-=Arr[i]
+                i+=1
+                j+=1
+                
+        return res
