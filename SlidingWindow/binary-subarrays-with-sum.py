@@ -1,9 +1,9 @@
 #https://leetcode.com/problems/binary-subarrays-with-sum/
 class Solution:
     def numSubarraysWithSum(self, nums: List[int], goal: int) -> int:
-        return self.getCount(nums,goal) - self.getCount(nums,goal-1)
+        return self.lessEqualtoGoal(nums,goal) - self.lessEqualtoGoal(nums,goal-1)
     
-    def getCount(self,nums,goal):
+    def lessEqualtoGoal(self,nums,goal):
         if goal<0:
             return 0
         l=0
@@ -20,6 +20,9 @@ class Solution:
             r+=1
         return count
                 
+
+        
+        
 
         
         
