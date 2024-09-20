@@ -25,6 +25,7 @@ class MyStack:
             return -1
         popped_node= self.head.data
         self.head= self.head.next
+        self.count-=1
         return popped_node
 
         # Add code here
