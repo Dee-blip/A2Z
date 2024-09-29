@@ -12,6 +12,7 @@ class LRUCache:
         self.tail= ListNode(0,0)
         self.head.next= self.tail
         self.tail.prev = self.head
+
     def get(self, key: int) -> int:
         if key in self.cache:
             node= self.cache[key]
