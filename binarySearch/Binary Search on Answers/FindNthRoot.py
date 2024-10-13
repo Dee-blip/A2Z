@@ -1,4 +1,5 @@
 #https://www.naukri.com/code360/problems/nth-root-of-m_1062679?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTabValue=PROBLEM
+#have to find the number in the range of m value that pow to the n gives equal to the m
 import math
 def NthRoot(n: int, m: int) -> int:
     low=1
