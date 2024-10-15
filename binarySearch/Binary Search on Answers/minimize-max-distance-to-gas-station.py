@@ -28,8 +28,9 @@ class Solution:
             
             if self.check(stations, k, mid):
                 ans = mid
-                hi = mid - 0.000001
+                # to get narrow down the search space that is slightly less than the mid.
+                hi = mid - 0.0001
             else:
-                lo = mid + 0.000001
+                lo = mid + 0.0001
         
         return ans
