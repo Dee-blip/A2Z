@@ -5,23 +5,30 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    # Time Complexity is O(n*n)
-    def checkHeight(self,root):
+
+    def checkTree(self,root):
         if root==None:
             return 0
-        left=self.checkHeight(root.left)
-        if left==-1:
+        
+        left = self.checkTree(root.left)
+        right = self.checkTree(root.right)
+
+        if left ==-1:
             return -1
-        right=self.checkHeight(root.right)
-        if right==-1:
+        if right == -1:
             return -1
-        if abs(left-right)>1:
-            return -1   
-        return 1+max(self.checkHeight(root.left),self.checkHeight(root.right
-        ))     
+        # print(left)
+        # print(right)
+        # print(abs(left - right))
+        if abs(left - right)>1:
+            return -1
     
+        return 1+ max(left,right)
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         if root==None:
             return True
-        return self.checkHeight(root)!= -1
+        return self.checkTree(root) != -1
+        
 
+
+        
