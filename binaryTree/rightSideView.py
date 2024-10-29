@@ -8,6 +8,7 @@ class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         #First approach is to use level order traversal and take out the last element of the each array but space complexity will be big
         #use recursive solution 
+        #. 1- Cleaner and Readable code , 2- we can pass local variable and parameter to the dfs function 
         right=[]
         def dfs(root,level):
             if root==None:
