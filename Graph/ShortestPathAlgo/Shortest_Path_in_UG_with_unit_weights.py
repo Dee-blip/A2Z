@@ -19,7 +19,7 @@ class Solution:
             node = queue.popleft()
             
             for neighbour in adj[node]:
-                if distance[neighbour]==-1:
+                if distance[neighbour]==-1 or distance[neighbour]>distance[node]+1:
                     distance[neighbour] = distance[node]+1 #remind this thing we have to update the neighbour node
                     queue.append(neighbour)
                     
